@@ -1,0 +1,7 @@
+if [[ $1 -eq "reset" ]]; then
+  echo "Resetting..."
+  sudo defaults write /System/Library/LaunchDaemons/com.apple.backupd-auto StartInterval -int 3600
+else;
+  echo "Setting...";
+  sudo defaults write /System/Library/LaunchDaemons/com.apple.backupd-auto StartInterval -int $1
+fi
