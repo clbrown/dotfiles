@@ -129,5 +129,10 @@ then
   fi
 fi
 
+
+# other bootstrap scripts here
+~/.dotfiles/iterm2/setup.sh
+
+
 echo ''
 echo '  All installed!'
