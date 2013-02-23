@@ -1,8 +1,6 @@
 #!/bin/sh
 # Iterm2 Preferences Setup
-set -x
 
-# symlink settings in
-iterm_prefs=~/Library/Preferences/com.googlecode.iterm2.plist
-mv "$iterm_prefs" "$iterm_prefs.backup"
-ln -s "$ZSH/iterm2/com.googlecode.iterm2.plist" "$iterm_prefs"
+# copy iterm prefs and colors
+cp ~/.dotfiles/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+cp ~/.dotfiles/iterm2/com.googlecode.iterm2.itermcolors ~/Library/Preferences/com.googlecode.iterm2.itermcolors
