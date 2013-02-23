@@ -23,3 +23,21 @@ git clone git@github.com:colynb/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 </pre>
+
+## personalizing
+
+Before you do anything, create your own emtpy dotfile repository. After cloning this one, you must change the remote url it's pointing to for pushes. If you list the remotes added to this repo:
+
+<pre>
+› git remote -v
+origin	git@github.com:colynb/dotfiles.git (fetch)
+origin	git@github.com:colynb/dotfiles.git (push)
+</pre>
+
+You'll see that if you made changes and you tried to push them up, you'll be pushing those changes to my repo (for which you do not have access anyway). You need to change the <code>origin</code> url to point to your own dotfiles repo:
+
+<pre>
+› git remote set-url origin git@github.com:[YOUR USERNAME]/dotfiles.git
+</pre>
+
+Now when you make changes that you want to push up to github, thankfully they'll apply to your own repo.
