@@ -133,6 +133,9 @@ fi
 # other bootstrap scripts here
 ~/.dotfiles/iterm2/setup.sh
 
+# switch to zsh
+chsh -s $(which zsh)
+
 
 echo ''
 echo '  All installed!'

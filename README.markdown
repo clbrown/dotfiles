@@ -1,87 +1,25 @@
-# holman does dotfiles
+# what can brown dotfiles do for you?
 
-## dotfiles
+## dotfiles (for zsh)
 
-Your dotfiles are how you personalize your system. These are mine.
+This is my dotfile collection. I use these whenever I'm setting up a new mac and I want to feel at home as quickly as possible - so that I can be productive as quickly as possible. I've gone through several macs in the past two years so I'm finding this to be an indispensible tool kit.
 
-I was a little tired of having long alias files and everything strewn about
-(which is extremely common on other dotfiles projects, too). That led to this
-project being much more topic-centric. I realized I could split a lot of things
-up into the main areas I used (Ruby, git, system libraries, and so on), so I
-structured the project accordingly.
+I forked these dotfiles from https://github.com/holman/dotfiles and it's a wonderful starting point.
 
-If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the
-subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
+## zsh
+
+Note: These dotfiles are compatible with <code>zsh</code>. I'm a newcomer to the dotfile community and until recently I had no idea there were different shells avaialable for Terminal. Terminal defaults to <code>bash</code> (what's bash anyway? Why do I care?). Turns out there's another shell call <code>zsh</code>. I only found this out because after installing these dotfiles, they didn't work as documented. After a bit of research I learned that you need to make sure your terminal app (there is another one avaialble for the mac called iTerm2 which I'll talk about next) is using zsh instead of the default bash. Holman's bootstrap script doesn't switch the shell for you, and there may be a good reason why not, but I've modified the bootstrap script to include this command so I don't have to think about it.
+
+## iTerm2
+
+Even though I've forked this repo from Holman's dotfiles, I have made some of my own customizations that you should be aware of. I've recently switched from using the default Terminal app to using iTerm2. I can't say there's a lot of difference, and I'm not even sure which I like best yet but it's what I'm using at the moment. As such, my dotfiles includes some iterm color preferences under the <code>iterm2</code> folder. There's a script that activates the theme file so it will be avaialble for use in iterm.
 
 ## install
 
-Run this:
+Clone this repo to your home directory and run the boostrap script:
 
-```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+<pre>
+git clone git@github.com:colynb/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
-```
-
-This will symlink the appropriate files in `.dotfiles` to your home directory.
-Everything is configured and tweaked within `~/.dotfiles`.
-
-The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
-which sets up a few paths that'll be different on your particular machine.
-
-`dot` is a simple script that installs some dependencies, sets sane OS X
-defaults, and so on. Tweak this script, and occasionally run `dot` from
-time to time to keep your environment fresh and up-to-date. You can find
-this script in `bin/`.
-
-## topical
-
-Everything's built around topic areas. If you're adding a new area to your
-forked dotfiles — say, "Java" — you can simply add a `java` directory and put
-files in there. Anything with an extension of `.zsh` will get automatically
-included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `script/bootstrap`.
-
-## what's inside
-
-A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
-above and see what components may mesh up with you. Fork it, remove what you
-don't use, and build on what you do use.
-
-## components
-
-There's a few special files in the hierarchy.
-
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
-  environment.
-- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
-  expected to setup `$PATH` or similar.
-- **topic/completion.zsh**: Any file named `completion.zsh` is loaded
-  last and is expected to setup autocomplete.
-- **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
-  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
-  but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `rake install`.
-
-## bugs
-
-I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as *my* dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
-
-If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/holman/dotfiles/issues) on this repository
-and I'd love to get it fixed for you!
-
-## thanks
-
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
-dotfiles were an easy way to get into bash customization, and then to jump ship
-to zsh a bit later. A decent amount of the code in these dotfiles stem or are
-inspired from Ryan's original project.
+</pre>
