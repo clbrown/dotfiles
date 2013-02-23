@@ -1,0 +1,16 @@
+{
+	"files":
+	{
+		"bottle": "https://github.com/defnull/bottle/raw/master/bottle.py",
+		"jquery": "http://code.jquery.com/jquery.min.js"
+	},
+	"packages":
+	{
+		"bottle-mvc": "https://github.com/salimane/bottle-mvc/archive/master.zip",
+		"html5_boilerplate": "https://github.com/h5bp/html5-boilerplate/zipball/master",
+		"picturefill": "https://github.com/scottjehl/picturefill/archive/master.zip",
+		"twitter_bootstrap": "http://twitter.github.com/bootstrap/assets/bootstrap.zip",
+		"vagrant-lamp-bootstrap": "https://github.com/colynb/Vagrant_CentOS_LAMP/archive/master.zip",
+		"workless": "http://github.com/iKreativ/Workless/zipball/master"
+	}
+}
